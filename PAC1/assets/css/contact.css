@@ -1,0 +1,72 @@
+.contact_title {
+  background-image: url("../img/contact-unsplash.jpg");
+}
+
+.contact_form {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact_form {
+    width: 60%;
+  }
+}
+
+.contact_form > .contact_form_body {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.contact_form_body label {
+  font-weight: bolder;
+  display: block;
+}
+
+.contact_form_body input,
+textarea {
+  margin-top: 5px;
+  width: 95%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #dee2e6;
+  appearance: none;
+  border-radius: 0.375rem;
+}
+
+.contact_form_body > div {
+  margin-bottom: 15px;
+}
+
+.send_body {
+  display: flex;
+  justify-content: end;
+}
+
+.contact_form_body .btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #000021;
+  background: #1de9b6;
+  line-height: 1.15;
+  font-size: 16px;
+}
+
+.contact_form_body .btn:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+}
