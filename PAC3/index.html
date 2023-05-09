@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex | PAC3</title>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js"></script>
+    <style>
+      [un-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body un-cloak>
+    <nav id="router-nav" class="flex flex-row space-x-3">
+      <button route-link to="list">Home</button>
+    </nav>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
