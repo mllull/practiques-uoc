@@ -1,16 +1,36 @@
 import { viewPropsType } from "./pages/view";
-const catchClick = async (element: HTMLButtonElement) => {
-  const page = element.getAttribute("to")!;
-  const file = await import(`./pages/${page}.ts`);
 
-  if (page == "view") {
-    const pid = parseInt(element.getAttribute("pid")!);
+const getFullPathname = () => location.pathname + location.search;
+
+const openFile = async (
+  fileName: "list" | "view",
+  pid: number | null,
+  setupRoute: boolean = true
+) => {
+  const file = await import(`./pages/${fileName}.ts`);
+
+  if (fileName == "view") {
+    if (setupRoute) {
+      history.pushState({}, "", `/pokemon?id=${pid}`);
+    }
     file.__render(<viewPropsType>{ pid });
-    routerSetupHandlers();
   } else {
+    if (setupRoute) {
+      history.pushState({}, "", `/`);
+    }
     file.__render();
-    routerSetupHandlers();
   }
+
+  routerSetupHandlers();
+};
+
+const catchClick = (element: HTMLButtonElement) => {
+  let pid = null;
+  const page: "view" | "list" = element.getAttribute("to")! as "view" | "list";
+
+  if (page == "view") pid = parseInt(element.getAttribute("pid")!);
+
+  openFile(page, pid);
 };
 
 const listenerDispatcher = (e: Event) => {
@@ -27,7 +47,12 @@ export const routerSetupHandlers = () => {
 
 const __main = () => {
   routerSetupHandlers();
-  document.querySelector<HTMLButtonElement>("button[route-link]")?.click();
+  if (getFullPathname().includes("pokemon")) {
+    const pid = parseInt(getFullPathname().split("id=")[1]!);
+    if (!isNaN(pid)) openFile("view", pid, false);
+  } else {
+    document.querySelector<HTMLButtonElement>("button[route-link]")?.click();
+  }
 };
 
 __main();
