@@ -34,7 +34,7 @@ const catchClick = (element: HTMLButtonElement) => {
 };
 
 const listenerDispatcher = (e: Event) => {
-  if (e) catchClick(e.target as HTMLButtonElement);
+  if (e) catchClick(e.currentTarget as HTMLButtonElement);
 };
 
 export const routerSetupHandlers = () => {

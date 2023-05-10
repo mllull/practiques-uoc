@@ -22,7 +22,7 @@ const html = `
   <div>
     <img id="poke__avatar-front" class="logo" alt="Pokemon logo front" />
     <img id="poke__avatar-back" class="logo" alt="Pokemon logo back" />
-    <h1 class="text-indigo-500 capitalize" id="poke__name"></h1>
+    <h1 class="text-indigo-500 dark:text-indigo-300 capitalize" id="poke__name"></h1>
   </div>
 
   
