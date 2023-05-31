@@ -32,7 +32,7 @@ const fetchPokemons = async () => {
 
 const doFilter = (searchInput: HTMLInputElement) => {
   if (searchInput.value.length) {
-    drawPokemons(pokemons.filter((p) => p.name.includes(searchInput.value)));
+    drawPokemons(pokemons.filter((p) => p.name.startsWith(searchInput.value)));
   } else drawPokemons(pokemons);
 };
 

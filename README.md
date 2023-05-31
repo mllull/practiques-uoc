@@ -2,6 +2,12 @@
 
 Aquí aniré afegint les PAC's del curs, ho aniré separant per carpetes, ja que les PAC's no estan relacionades entre elles.
 
+## 31 de maig del 2023
+
+Acabada la PAC4.
+
+He seguit emprant el mateix que a la PAC3, és a dir: Vite + TypeScript + UnoCSS amb la diferència de que ara ho he fet emprant Vue + Vue-Router.
+
 ## 10 de maig del 2023
 
 Acabada la PAC3.
